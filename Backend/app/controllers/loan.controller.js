@@ -2,7 +2,7 @@ const db = require("../models");
 const Loan = db.loans;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
+
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.idNumber) {
@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorial
+
   const loan = {
     name: req.body.name,
     surname: req.body.surname,
@@ -31,7 +31,7 @@ exports.create = (req, res) => {
     isactive: req.body.published ? req.body.published : true
   };
 
-  // Save Tutorial in the database
+
   Loan.create(loan)
     .then(data => {
       res.send(data);
@@ -56,7 +56,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving ola."
       });
     });
 };
@@ -71,7 +71,7 @@ exports.findOne = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Tutorial with id=" + id
+        message: "Error retrieving Loan with id=" + id
       });
     });
 };
@@ -86,22 +86,22 @@ exports.update = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was updated successfully."
+          message: "Loan was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+          message: `Cannot update Loan with id=${id}. Maybe Loan was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id
+        message: "Error updating Loan with id=" + id
       });
     });
 };
 
-// Delete a Tutorial with the specified id in the request
+
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -111,17 +111,17 @@ exports.delete = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "Loan was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: `Cannot delete Loan with id=${id}. Maybe Loan was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id=" + id
+        message: "Could not delete Loan with id=" + id
       });
     });
 };
@@ -133,26 +133,55 @@ exports.deleteAll = (req, res) => {
     truncate: false
   })
     .then(nums => {
-      res.send({ message: `${nums} Tutorials were deleted successfully!` });
+      res.send({ message: `${nums} Loans were deleted successfully!` });
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all tutorials."
+          err.message || "Some error occurred while removing all loans."
       });
     });
 };
 
-// find all published Tutorial
-exports.findAllPublished = (req, res) => {
-  Loan.findAll({ where: { published: true } })
+
+
+
+exports.findAllRejectedLoans = (req, res) => {
+  Loan.findAll({ where: { loanstatus: 'rejected' } })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving loans."
       });
     });
 };
+
+exports.findAllApprovedLoans = (req, res) => {
+  Loan.findAll({ where: { loanstatus: 'approved' } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving loans."
+      });
+    });
+};
+
+exports.findAllPendingLoans = (req, res) => {
+  Loan.findAll({ where: { loanstatus: 'pending' } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving loans."
+      });
+    });
+};
+
