@@ -1,0 +1,132 @@
+
+<div id="wrapper">
+    
+    <app-sidebar></app-sidebar>
+  
+    <div id="content-wrapper">
+
+    <app-header></app-header>
+ 
+      <div class="index-content container-main">
+        <div class="dashboard-header  d-flex justify-between">
+          <!--!Dashboard header-->
+          <h3></h3>  
+        </div>
+  
+  
+        <div class="row-table-container">
+          <div class="table-content-row">
+            <div class="user-setting margin-row-prof shadow-edit">
+              <!--Table Row Header-->
+              <div class="user-setting-head project-head">
+                <h6>VIEW PAYMENTS</h6>
+              </div>
+              <!--Table Row body-->
+              <div class="table-row-body project-body">
+                <!--!Table Top head-->
+                <div class="row-table-head margin-column-form d-flex justify-between">
+                  <div class="table-head-col text-nowrap">
+                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                      <label class="form-label d-flex">
+                        Show&nbsp;
+                        <select class="form-control">
+                          <option value="10" selected="">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select>&nbsp;
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table-head-col">
+                    <div class="dataTables_filter" id="dataTable_filter"><label class="form-label">
+                      <input type="search" [(ngModel)]="idNumber"
+                          class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label>
+                          <button class="button-profile" (click)="searchByID()">Search</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <!--!Table Itself-->
+                <div class="table-itself margin-column-form">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Loan Amount</th>
+                        <th>Type of loan</th>
+                        <th>Nr of months</th>
+                        <th>Phonenumber</th>
+                        <th>Date Approved</th>                    
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+        
+                      <tr *ngFor="let loan of loans; let i = index" [class.active]="i ==currentIndex">                       
+                        <td>{{loan.name}}  {{loan.surname}}</td>
+                        <td>R{{loan.amountrequired}}</td>
+                        <td>{{loan.loantype}}</td>
+                        <td>{{loan.numberofmonth}}</td>
+                        <td>{{loan.phonenumber}}</td>
+                        <td>{{loan.email}}</td>
+                        <td>{{loan.loanstatus}}</td>     
+                        <td><a routerLink="/create-payment"class="generate-dash-btn"><i class="fas fa-download fa-sm"></i>Create payment</a></td>                
+                        <!-- <td><a routerLink="/editloan/{{ loan.id }}">Edit</a></td> -->
+                      </tr>
+                            
+                      
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td><strong>Name</strong></td>
+                        <td><strong>Loan amount</strong></td>
+                        <td><strong>Type of loan</strong></td>
+                        <td><strong>Nr of months</strong></td>
+                        <td><strong>Phonenumber</strong></td>
+                        <td><strong>Date Approved</strong></td>
+                        <td><strong>Status</strong></td>
+                        <td><strong></strong></td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+        
+                <!--!Table bottom head-->
+                <div class="row-table-head d-flex justify-between">
+                  <div class="table-head-col table-head-col2 text-nowrap">
+                    <p id="dataTable_info" class="dataTables_info margin-column-form" role="status">Showing 1 to 10 of
+                      27</p>
+                  </div>
+                  <div class="table-head-col d-flex flex-end">
+                    <ul class="pagination margin-column-form d-flex">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                            aria-hidden="true">»</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+        
+        
+              </div>
+              <!--Table row body ends-->
+        
+            </div>
+        
+          </div>
+          
+        
+          
+          </div>
+
+</div>
+  
+  
+  
+  

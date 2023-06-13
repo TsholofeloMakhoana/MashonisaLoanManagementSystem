@@ -1,0 +1,227 @@
+<div id="wrapper">
+    <app-sidebar></app-sidebar>
+
+    <div id="content-wrapper">
+        <app-header></app-header>
+
+      <!--!Index's Main contents start here-->
+      <div class="index-content container-main">
+
+        <!--!Dashboard header-->
+        <div class="prof-header  d-flex justify-between">
+          <h3>Make payment</h3>
+        </div>
+        <div class="row-profile-container d-flex">
+          <!--!Row 1-->
+          <div class="row-prof2 ">
+            <!--!User Settings-->
+            <div class="user-setting margin-row-prof shadow-edit">
+              <div class="user-setting-head project-head">
+                <h6>Applicants details</h6>
+              </div>
+              <div class="user-setting-body project-body">
+                <form>
+                  <!--row1-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="username"><strong>Name</strong></label>
+                      <input class="form-control-prof" type="text" id="username" placeholder="user.name"
+                        name="username">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="email"><strong>Surname</strong></label>
+                      <input class="form-control-prof" type="email" id="email" placeholder="Surname"
+                        name="emailAdress">
+                    </div>
+                  </div>
+                  <!--row2-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>Phone Number</strong></label>
+                      <input class="form-control-prof" type="text" id="firstname" placeholder="Phone Number" name="lastname">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Email Address</strong></label>
+                      <input class="form-control-prof" type="text" id="lastname" placeholder="Email Address" name="lastname">
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>Home Address</strong></label>
+                      <input class="form-control-prof" type="text" id="firstname" placeholder="John" name="firstname">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Employer</strong></label>
+                      <input class="form-control-prof" type="text" id="lastname" placeholder="Doe" name="lastname">
+                    </div>
+                  </div>
+                  
+                  <!--row3-->
+                  
+                </form>
+              </div>
+
+            </div>
+            <!--!Contact Settings-->
+      
+          </div>
+
+          <!--!Second column of Row 1-->
+          <div class="row-prof2 ">
+            <!--!User Settings-->
+            <div class="user-setting margin-row-prof shadow-edit">
+              <div class="user-setting-head project-head">
+                <h6>Loan Details</h6>
+              </div>
+              <div class="user-setting-body project-body">
+                <form>
+                  <!--row1-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="username"><strong>Loan type</strong></label>
+                      <input class="form-control-prof" type="text" id="username" placeholder="user.name"
+                        name="username">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="email"><strong>Number of months</strong></label>
+                      <input class="form-control-prof" type="number" id="email" placeholder="24"
+                        name="emailAdress">
+                    </div>
+                  </div>
+                  <!--row2-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>Current amount</strong></label>
+                      <input class="form-control-prof" type="text" id="firstname" placeholder="John" name="firstname">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Amount to pay</strong></label>
+                      <input class="form-control-prof" type="text" id="lastname" placeholder="Doe" name="lastname">
+                    </div>
+                  </div>
+                  <!--row3-->
+                
+                </form>
+              </div>
+
+            </div>
+            <!--!Contact Settings-->
+            <div class="form-row">
+                <div class="form-row-button">
+                  <button class="button-profile" type="button">Make loan payment</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+      
+     
+	<!--!row-->
+  <div class="row-table-container">
+    <div class="table-content-row">
+      <div class="user-setting margin-row-prof shadow-edit">
+        <!--Table Row Header-->
+        <div class="user-setting-head project-head">
+          <h6>PAYMENT HISTORY</h6>
+        </div>
+        <!--Table Row body-->
+        <div class="table-row-body project-body">
+          <!--!Table Top head-->
+          <div class="row-table-head margin-column-form d-flex justify-between">
+            <div class="table-head-col text-nowrap">
+              <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                <label class="form-label d-flex">
+                  Show&nbsp;
+                  <select class="form-control">
+                    <option value="10" selected="">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>&nbsp;
+                </label>
+              </div>
+            </div>
+            <div class="table-head-col">
+              <div class="dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search"
+                    class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label>
+              </div>
+            </div>
+          </div>
+  
+          <!--!Table Itself-->
+          <div class="table-itself margin-column-form">
+            <table>
+              <thead>
+                <tr>
+                  <th>Amount Paid</th>
+                  <th>Type of loan</th>
+                  <th>Date of payment</th>
+                  <th>Available balance</th>
+           
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                       
+                  <td>R200.00</td>
+                  <td>Personal loan</td>
+                  <td>22 June 2022</td>
+                  <td>R26000</td>           
+                </tr>                
+
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><strong>Amount paid</strong></td>
+                  <td><strong>Type of loan</strong></td>
+                  <td><strong>Date of payment</strong></td>
+                  <td><strong>Available balance</strong></td>        
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+  
+          <!--!Table bottom head-->
+          <div class="row-table-head d-flex justify-between">
+            <div class="table-head-col table-head-col2 text-nowrap">
+              <p id="dataTable_info" class="dataTables_info margin-column-form" role="status">Showing 1 to 10 of
+                27</p>
+            </div>
+            <div class="table-head-col d-flex flex-end">
+              <ul class="pagination margin-column-form d-flex">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                      aria-hidden="true">»</span></a></li>
+              </ul>
+            </div>
+          </div>
+  
+  
+        </div>
+        <!--Table row body ends-->
+  
+      </div>
+  
+    </div>    
+
+  
+  
+  
+  
+
+    </div>
+
+
+
+  </div>
+
+  <a class="page-up-fixed" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+  </div>

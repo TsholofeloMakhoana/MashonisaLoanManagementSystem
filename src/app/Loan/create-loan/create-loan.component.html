@@ -1,0 +1,144 @@
+<div id="wrapper">
+    <app-sidebar></app-sidebar>
+
+    <div id="content-wrapper">
+        <app-header></app-header>
+
+      <!--!Index's Main contents start here-->
+      <div class="index-content container-main">
+
+        <!--!Dashboard header-->
+        <div class="prof-header  d-flex justify-between">
+          <h3>Capture new loan</h3>
+        </div>
+        <div class="row-profile-container d-flex">
+  
+          <!--!Row 1-->
+          <div class="row-prof2 ">
+            <!--!User Settings-->
+            <div class="user-setting margin-row-prof shadow-edit">
+              <div class="user-setting-head project-head">
+                <h6>Applicants details</h6>
+              </div>
+              <div class="user-setting-body project-body">
+             
+                  <!--row1-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="username"><strong>Name</strong></label>
+                      <input class="form-control-prof" type="text" id="Name" name="name"  required [(ngModel)]="loan.name">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="email"><strong>Surname</strong></label>
+                      <input class="form-control-prof" type="text" id="Surname" required [(ngModel)]="loan.surname" name="surname">
+                    </div>
+                  </div>
+                  <!--row2-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>ID number</strong></label>
+                      <input class="form-control-prof" type="text" id="IdNo" required [(ngModel)]="loan.idNumber" name="idNumber">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Phone number</strong></label>
+                      <input class="form-control-prof" type="text" id="PhoneNo" required [(ngModel)]="loan.phonenumber" name="phonenumber">
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Email Address</strong></label>
+                      <input class="form-control-prof" type="email" id="emailAdress" required [(ngModel)]="loan.email" name="email">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>Home Address</strong></label>
+                      <input class="form-control-prof" type="text" id="HomeAddress" required [(ngModel)]="loan.homeaddress" name="homeaddress">
+                    </div>                  
+                  </div>
+                  
+                  <!--row3-->
+                  
+            
+              </div>
+
+            </div>
+            <!--!Contact Settings-->
+      
+          </div>
+
+          <!--!Second column of Row 1-->
+          <div class="row-prof2 ">
+            <!--!User Settings-->
+            <div class="user-setting margin-row-prof shadow-edit">
+              <div class="user-setting-head project-head">
+                <h6>Loan Details</h6>
+              </div>
+              <div class="user-setting-body project-body">
+            
+                  <!--row1-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="username"><strong>Loan type</strong></label>
+
+                    <select [(ngModel)]="loan.loantype" class="form-control-prof">                       
+                        <option>Personal loan</option>  
+                        <option>Short loan</option> 
+                        <option >Schooll fees loan</option>  
+                    </select>
+                      <!-- <input class="form-control-prof" type="text" id="loanType" required [(ngModel)]="loan.loantype" name="loantype"> -->
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="email"><strong>Number of months</strong></label>
+                      <select [(ngModel)]="loan.numberofmonth" class="form-control-prof">       
+                        <option>3</option>                  
+                        <option>6</option>  
+                        <option>12</option>  
+                        <option>18</option>  
+                        <option>24</option>  
+                        <option>30</option>  
+                        <option>36</option>  
+                        <option>42</option>  
+                    </select>
+                      <!-- <input class="form-control-prof" type="number" id="NoMonth" required [(ngModel)]="loan.numberofmonth" name="numberofmonth"> -->
+                    </div>
+                  </div>
+                  <!--row2-->
+                  <div class="form-row d-flex justify-between">
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="firstname"><strong>Amount required</strong></label>
+                      <input class="form-control-prof" type="number" id="AmountRequested"  required [(ngModel)]="loan.amountrequired" name="amountrequired">
+                    </div>
+                    <div class="form-row-col d-flex flex-direction-column">
+                      <label class="form-label" for="lastname"><strong>Reason for loan</strong></label>
+                      <input class="form-control-prof" type="text" id="Reason"  required [(ngModel)]="loan.reasonforloan" name="reasonforloan">
+                    </div>
+                  </div>
+                  <!--row3-->                
+              
+              </div>
+
+            </div>
+        
+            
+            <div class="form-row">
+                <div class="form-row-button">                  
+                  <button class="button-profile" (click)="saveNewLoan()">Apply loan</button>
+                </div>
+              </div>
+          </div>
+   
+        </div>
+
+     
+     
+	 <div class="footer">
+        <footer>
+            <span>Copyright © MashonisaLoanManagementSystem </span>
+        </footer>
+      </div>
+  </div>
+  </div>
+      <a class="page-up-fixed" href="#page-top"><i class="fas fa-angle-up"></i></a>
+  </div>

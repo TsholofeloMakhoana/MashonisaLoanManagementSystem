@@ -1,0 +1,181 @@
+
+<div id="wrapper">
+    
+    <app-sidebar></app-sidebar>
+
+    <div id="content-wrapper">
+    <app-header></app-header>
+      <!--!Top Nav ends-->
+      <!--!Index's Main contents start here-->
+      <div class="index-content container-main">
+        <div class="dashboard-header  d-flex justify-between">
+          <!--!Dashboard header-->
+          <h3>Dashboard</h3>
+         
+        </div>
+        <!--!Indo cards-->
+        <div class="income-inf-row row">
+          <!--!Card no1-->
+          <div class="col-income">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="card-span"><span style="color: rgb(78, 115, 223);">Pending loans</span></div>
+                  <div class="card-price"><span>{{pendingLoans.length}}</span></div>
+                </div>
+                <div class="card-icon">
+                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--!Card no2-->
+          <div class="col-income">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="card-span"><span style="color: rgb(28, 200, 138);">Approved loans</span></div>
+                  <div class="card-price"><span> {{approvedLoans.length}}</span></div>
+                </div>
+                <div class="card-icon">
+                  <i class="fas fa-check fa-2x text-blue-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--!Card no3-->
+          <div class="col-income">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="card-span"><span style="color: red">Rejected loans</span></div>
+                  <div class="card-price d-flex card-task">
+                    <span>{{rejectedLoans.length}}</span>                    
+                  </div>
+                </div>
+                <div class="card-icon">
+                  <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--!Card no4-->
+          <div class="col-income">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="card-span"><span style="color: rgb(246, 194, 62);">All loans</span></div>
+                  <div class="card-price"><span> {{loans.length}}</span></div>
+                </div>
+                <div class="card-icon">
+                  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+  <!--!row-->
+  <div class="row-table-container">
+    <div class="table-content-row">
+      <div class="user-setting margin-row-prof shadow-edit">
+        <!--Table Row Header-->
+        <div class="user-setting-head project-head">
+          <h6>ALL LOAN APPLICATION</h6>
+        </div>
+        <!--Table Row body-->
+        <div class="table-row-body project-body">
+          <!--!Table Top head-->
+          <div class="row-table-head margin-column-form d-flex justify-between">
+            <div class="table-head-col text-nowrap">
+              <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                <label class="form-label d-flex">
+                  Show&nbsp;
+                  <select class="form-control">
+                    <option value="10" selected="">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>&nbsp;
+                </label>
+              </div>
+            </div>         
+          </div>
+  
+          <!--!Table Itself-->
+          <div class="table-itself margin-column-form">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Loan Amount</th>
+                  <th>Type of loan</th>
+                  <th>Number of months</th>
+                  <th>Phonenumber</th>
+                  <th>Date Created</th>                    
+                  <th>Status</th>
+               
+                </tr>
+              </thead>
+              <tbody>
+  
+                <tr *ngFor="let loan of loans; let i = index" [class.active]="i ==currentIndex">                       
+                  <td>{{loan.name}}  {{loan.surname}}</td>
+                  <td>R{{loan.amountrequired}}</td>
+                  <td>{{loan.loantype}}</td>
+                  <td>{{loan.numberofmonth}}</td>
+                  <td>{{loan.phonenumber}}</td>
+                  <td>{{loan.email}}</td>
+                  <td>{{loan.loanstatus}}</td>                     
+               
+                </tr>
+                      
+                
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Loan amount</strong></td>
+                  <td><strong>Type of loan</strong></td>
+                  <td><strong>Number of months</strong></td>
+                  <td><strong>Phonenumber</strong></td>
+                  <td><strong>Date Created</strong></td>
+                  <td><strong>Status</strong></td>
+                  <td><strong></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+  
+          <!--!Table bottom head-->
+          <div class="row-table-head d-flex justify-between">
+            <div class="table-head-col table-head-col2 text-nowrap">
+              <p id="dataTable_info" class="dataTables_info margin-column-form" role="status">Showing 1 to 10 of
+                27</p>
+            </div>
+            <div class="table-head-col d-flex flex-end">
+              <ul class="pagination margin-column-form d-flex">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                      aria-hidden="true">»</span></a></li>
+              </ul>
+            </div>
+          </div>
+  
+  
+        </div>
+        <!--Table row body ends-->
+  
+      </div>
+  
+    </div>    
+  </div>
+
+
+
