@@ -1,35 +1,24 @@
-<div id="bg-login" class="bg-login">
+<body>
+<div class="main">  	
+    <input type="checkbox" id="chk" aria-hidden="true">
 
-    <div class="login-form-container">
-      <div class="img-login"></div>
-      <div class="login-form">
-        <div class="login-form2">
-          <div class="text-center">
-            <h4>Welcome Back!</h4>
-          </div>
-          <form class="user-login">
-            <div><input class="form-control form-control-user" type="email" id="exampleInputEmail"
-                placeholder="Enter Email Address..." name="email"></div>
-            <div><input class="form-control form-control-user" type="password" id="exampleInputPassword"
-                placeholder="Password" name="password"></div>
-            <div>
-              <div class="custom-control custom-checkbox small">
-                <div class="form-check d-flex">
-                  <input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1">
-                  <label class="form-check-label custom-control-label" for="formCheck-1">Remember Me</label>
-                </div>
-              </div>
-            </div>
-            <button class="login-btn" type="submit">Login</button>
-            <hr>
-            <a href="#" class="login-google" role="button"><i class="fab fa-google"></i>&nbsp; Login with Google</a>
-            <a href="#" class="login-fb" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
-            <hr>
-          </form>
-          <div class="text-center"><a class="small" href="#">Forgot Password?</a></div>
-          <div class="text-center"><a class="small" href="register.html">Create an Account!</a></div>
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" [(ngModel)]=" signupobj.userName">
+                <input type="email" name="email" placeholder="Email" [(ngModel)]=" signupobj.email">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]=" signupobj.password">
+                <button (click)="onSignUp()">Sign up</button>
+            </form>
         </div>
-      </div>
-    </div>
 
-  </div>
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="text" name="userName" placeholder="User Name" [(ngModel)]="loginobj.userName">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginobj.password">
+                <button (click)="onLogin()">Login</button>
+            </form>
+        </div>
+</div>
+</body>
